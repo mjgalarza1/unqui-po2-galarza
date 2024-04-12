@@ -4,12 +4,15 @@ import java.util.ArrayList;
 
 public class Counter {
 	
+	// VARIABLES
 	private ArrayList<Integer> counters = new ArrayList<Integer>();
 	
+	// GETTERs & SETTERs
 	public ArrayList<Integer> getCounters() {
 		return counters;
 	}
 	
+	// METHODS
 	public void addNumber(int x) {
 		counters.add(x);
 	}
@@ -46,6 +49,7 @@ public class Counter {
 	
 	// EJERCICIO 2)
 	// EJEMPLO: getNumberWithMostEvenDigitsFromArray([10, 5, 40, 100, 224, 3148])	<< Debe retornar: 224
+	// Funciona, pero seguro sea mejorable!
 	public int getNumberWithMostEvenDigitsFromArray(ArrayList<Integer> anArrayOfNumbers) {
 		
 		int currentNumber = anArrayOfNumbers.get(0);

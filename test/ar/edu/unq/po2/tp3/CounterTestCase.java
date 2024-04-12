@@ -30,7 +30,6 @@ public class CounterTestCase {
 	public void testEvenNumbers() {
 		// Exercise
 		int amount = counter.getEvenOcurrences();
-		
 		// Assert
 		assertEquals(amount, 2);
 	}
@@ -39,7 +38,6 @@ public class CounterTestCase {
 	public void testOddNumbers() {
 		// Exercise
 		int amount = counter.getOddOcurrences();
-		
 		// Assert
 		assertEquals(amount, 9);
 	}
@@ -80,7 +78,7 @@ public class CounterTestCase {
 	}
 	
 	@Test
-	public void testEjercicio3( ) {
+	public void testEjercicio3() {
 		int number1 = counter.getTheBiggestMultipleNumberBetween_and_(3,9);
 		int number2 = counter.getTheBiggestMultipleNumberBetween_and_(100,2);
 		int number3 = counter.getTheBiggestMultipleNumberBetween_and_(1001,1);
@@ -88,5 +86,80 @@ public class CounterTestCase {
 		assertEquals(number1,999);
 		assertEquals(number2,1000);
 		assertEquals(number3,-1);
+	}
+	
+	@Test
+	public void testEjercicio4() {
+		/*
+		● s.length();
+		● t.length();							ERROR: t no entiende el mensaje "length" (por ser vacio)
+		● 1 + a;								ERROR: Son de diferentes tipos (Int + String)
+		● a.toUpperCase();
+		● "Libertad".indexOf("r");
+		● "Universidad".lastIndexOf('i');
+		● "Quilmes".substring(2,4);
+		● (a.length() + a).startsWith("a");		ERROR: (3 + "abc") tira error
+		● s == a;
+		● a.substring(1,3).equals("bc")
+		*/
+		
+		// SetUp
+		String a = "abc";
+		String s = a;
+		String t;
+
+		// Assert
+		assertEquals(s.length(), 3);
+		assertEquals(a.toUpperCase(), "ABC");
+		assertEquals("Libertad".indexOf("r"), 4);
+		assertEquals("Universidad".lastIndexOf('i'), 7);
+		assertEquals("Quilmes".substring(2,4), "il"); 
+		assertTrue((a).startsWith("a"));
+		assertTrue(s == a);
+		assertTrue(a.substring(1,3).equals("bc"));
+	}
+	
+	@Test
+	public void testEjercicio5() {
+		/*3. ¿Si se define una variable de instancia de tipo int cual sería su valor predeterminado?
+		 ¿Y si se define una de tipo Integer? Haga la prueba en Eclipse.
+		  
+		4. Responder la pregunta del punto anterior (3), pero ahora en lugar de definir una variable
+		de instancia se define una variable de método. */
+		
+		int var1;
+		Integer var2;
+		
+		/* RESPUESTA: No tienen valores predeterminados. Solo pueden tener valores al asignarles uno:
+		  		int var1 	 = 1;	<< Instancia el valor de tipo int (primitivo) 1.
+		  		Integer var2 = 2;	<< Instancia el valor de tipo Integer (clase) 2.
+		  Es decir, deben ser instanciados para tener un valor.
+		 */
+	}
+	
+	// EJERCICIO 5: Punto 4)
+	/*Responder la pregunta del punto anterior (3), pero ahora en lugar de definir una variable
+		de instancia se define una variable de método.*/
+	public int primitivo(int a) {
+		return a;
+	}
+	
+	public Integer integerClase(Integer a) {
+		return a;
+	}
+	
+	@Test
+	public void testEjercicio5parte2() {
+		// Assert
+		assertEquals(primitivo(1), 1);
+		assertEquals(integerClase(1), 1);
+		// RESPUESTA: Igual que el caso anterior, pero en este caso lo recibe como parámetro.
+		int[] arregloDeEnteros;
+		int[][] matrizDeEnteros;
+		arregloDeEnteros = new int[5];
+		matrizDeEnteros = new int[6][4];
+		
+		int[] val = matrizDeEnteros[2];
+		assertEquals(matrizDeEnteros[5][3], 0);
 	}
 }
