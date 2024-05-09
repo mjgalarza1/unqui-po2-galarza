@@ -51,29 +51,5 @@ public class PoquerStatus {
 	private List<Palo> palosDeLasCartas(List<Carta> manoDeCartas) {
 		return manoDeCartas.stream().map(carta -> carta.getPalo()).toList();
 	}
-	
-	// Retorna el valor de la carta, es decir, sin el palo de la carta.
-	private String valorDeLaCarta(String s) {
-		String valor;
-		if (s.length() == 2) {
-			valor = Character.toString(s.charAt(0));
-		}
-		else {
-			valor = s.substring(0, 1);
-		}
-		return valor;
-	}
-	
-	// Retorna el palo de la carta, es decir, sin el valor de la carta.
-	private char paloDeLaCarta(String s) {
-		char palo;
-		if (s.length() == 2) {
-			palo = s.charAt(1);
-		}
-		else {
-			palo = s.charAt(2);
-		}
-		return palo;
-	}
 
 }
